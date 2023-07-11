@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //this is to indicate that laravel sanctum authentication will be provided
 Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::post('/welcome', [WelcomeController::class, 'welcome']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 Route::post('/login', [LoginController::class, 'login']);
